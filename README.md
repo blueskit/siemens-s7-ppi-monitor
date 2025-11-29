@@ -12,6 +12,8 @@
 # RELEASE下载
   下载的程序运行需要 Windows7/10/11,并已经安装了 DotNet8 runtime.
 
+  https://github.com/blueskit/siemens-s7-ppi-monitor/releases
+
 ## 使用方法:
   1) 在PC上可使用 USB-RS485转换器。 
   2) 在PLC和HMI通讯的RS485串口电缆上，跨接上述 RS485(仅用作读取，不做任何写操作)。 
