@@ -9,6 +9,9 @@
   4) 这第一个版本功能简单, 后续将完善协议解析、界面重构。
   5) 如试用后有好的建议, 可发邮件 blueskit@outlook.com
 
+<img width="1665" height="938" alt="image" src="https://github.com/user-attachments/assets/5aa3ef89-9472-425e-86b4-271ea395e645" />
+
+
 # RELEASE下载
   下载的程序运行需要 Windows7/10/11,并已经安装了 DotNet8 runtime.
 
