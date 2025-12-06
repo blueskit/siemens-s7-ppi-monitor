@@ -1,8 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Xml.Linq;
+
 using DotNetty.Buffers;
+
 using S7PpiMonitor.Utilities;
 
 namespace S7PpiMonitor.Protocols;
@@ -219,7 +221,7 @@ public partial class PpiSD2PDU
             switch (element.Type) {
             case PpiVarType.Bit:
                 byte[] rawBitBytes = new byte[4];
-                buff.ReadBytes(rawBitBytes, 0, rawBitBytes.Length);
+                buff.ReadBytes(rawBitBytes, 0, Math.Min(rawBitBytes.Length, buff.ReadableBytes));
                 int baseOffset = 0;
 #if DEBUG
                 var idx0name = element.GetVarName();
@@ -240,7 +242,7 @@ public partial class PpiSD2PDU
                 } else {
                     baseOffset = 0;
                     rawBitBytes = new byte[varDataLen];
-                    buff.ReadBytes(rawBitBytes, 0, rawBitBytes.Length);
+                    buff.ReadBytes(rawBitBytes, 0, Math.Min(rawBitBytes.Length, buff.ReadableBytes));
                 }
 
                 var bits = new BitArray(rawBitBytes);
@@ -261,9 +263,10 @@ public partial class PpiSD2PDU
                     Console.WriteLine(idx1name);
 #endif
 
-                if (element.Count < 4)
-                    buff.SkipBytes(4 - element.Count);
-                else {  // 此时根据下一个 FF 04 的位置决定指针是否跳过2Bytes
+                if (element.Count < 4) {
+                    if (element.Count < buff.ReadableBytes)
+                        buff.SkipBytes(Math.Min(4 - element.Count, buff.ReadableBytes));
+                } else {  // 此时根据下一个 FF 04 的位置决定指针是否跳过2Bytes
                     var buf4 = new byte[buff.ReadableBytes];
                     buff.GetBytes(buff.ReaderIndex, buf4);
                     if (buf4.Length == (element.Count + 2))
@@ -279,7 +282,7 @@ public partial class PpiSD2PDU
                 }
 
                 var bytes = new byte[element.Count];
-                for (int j = 0; j < element.Count; j++)
+                for (int j = 0; j < element.Count && buff.ReadableBytes > 0; j++)
                     bytes[j] = buff.ReadByte();
 
                 // 按 BYTE 构建
