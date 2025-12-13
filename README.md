@@ -10,11 +10,11 @@ Siemens PLC PPI Protocol Monitoring Tool
   4) 这第一个版本功能简单, 后续将完善协议解析、界面重构。
   5) 如试用后有好的建议, 可发邮件 blueskit@outlook.com
 
-Developed with Dotnet 8 + WinForm.
-When an existing Siemens PLC communicates with HMI via PPI and no variable table is available, this tool can assist in quickly acquiring most variable information.
-The official documentation provides only vague descriptions of PPI protocol parsing, and relevant interpretations online are also unclear. After resolving numerous issues through actual testing, the first version is finally ready for use.
-This initial version has simple functions; subsequent iterations will improve protocol parsing and reconstruct the interface.
-If you have any valuable suggestions after trial use, please send an email to blueskit@outlook.com.
+  1) Developed with Dotnet 8 + WinForm.
+  2) When an existing Siemens PLC communicates with HMI via PPI and no variable table is available, this tool can assist in quickly acquiring most variable information.
+  3) The official documentation provides only vague descriptions of PPI protocol parsing, and relevant interpretations online are also unclear. After resolving numerous issues through actual testing, the first version is finally ready for use.
+  4) This initial version has simple functions; subsequent iterations will improve protocol parsing and reconstruct the interface.
+  5) If you have any valuable suggestions after trial use, please send an email to blueskit@outlook.com.
 
 <img width="1381" height="797" alt="image" src="https://github.com/user-attachments/assets/b23cf01f-a6ab-4eb3-92a0-a6c1ac202dcd" />
 
