@@ -26,8 +26,8 @@ Siemens PLC PPI Protocol Monitoring Tool
 <img width="1387" height="801" alt="image" src="https://github.com/user-attachments/assets/bbcb9f7f-6a39-4768-9f5f-e9004c2e7cff" />
 
 # RELEASE
-  System Requirements: The downloaded program requires Windows 7/10/11 operating system with DotNet8 runtime pre-installed.
-  下载的程序运行需要 Windows7/10/11,并已经安装了 DotNet8 runtime.
+  <p>System Requirements: The downloaded program requires Windows 7/10/11 operating system with DotNet8 runtime pre-installed.</p>
+  <p>下载的程序运行需要 Windows7/10/11,并已经安装了 DotNet8 runtime.</p>
 
 ## Download Link
    https://github.com/blueskit/siemens-s7-ppi-monitor/releases
