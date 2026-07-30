@@ -1,5 +1,5 @@
-﻿using FCP.Common.Data;
-using FCP.Common.Extensions;
+﻿using S7PpiMonitor.Common;
+
 using S7Types = S7.Net.Types;
 
 namespace S7PpiMonitor.Models;
